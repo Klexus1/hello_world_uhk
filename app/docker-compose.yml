@@ -1,0 +1,12 @@
+services:
+  hello_world:
+    build: ./hello_world
+    ports:
+      - '8000'
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '1337:80'
+    depends_on:
+      - hello_world
