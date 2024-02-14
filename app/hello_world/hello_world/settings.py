@@ -12,8 +12,17 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from datetime import datetime
+from pathlib import Path
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+INIT_DIR_STRUCTURE = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'logging'),
+]
+
+for init_dir in INIT_DIR_STRUCTURE:
+    Path(init_dir).mkdir(parents=True, exist_ok=True)
 
 SECRET_KEY = 'hello_world_key'
 
