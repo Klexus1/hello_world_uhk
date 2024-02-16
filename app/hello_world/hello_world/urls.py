@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from common.views import IndexView
+from common.views import IndexView, stress_test_view
 
 urlpatterns = [
+    path("stress-test/<int:stress_level>", stress_test_view, name="stress-test"),
     path("", IndexView.as_view(), name="index"),
 ]
