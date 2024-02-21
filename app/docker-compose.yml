@@ -3,6 +3,8 @@ services:
     build: ./hello_world
     ports:
       - '8000'
+    volumes:
+      - /:/data
 
   nginx:
     build: ./nginx
